@@ -1,0 +1,127 @@
+
+$bp-1200: 75em;     // 1200px 75X16
+$bp-1100: 68.75em;    // 1100px
+$bp-900: 56.25em;   // 900px
+$bp-600: 37.5em;     // 600px
+$bp-500: 31.25em; // 500px
+
+$white: #fff;
+html {
+
+    ////// DEFINING 1rem for each device
+    font-size: 62.5%; // 62.5 % of 16 = 10px
+
+    @media only screen and (max-width: $bp-1200) { // width < 1200? tab-land
+        font-size: 56.25%; // 56.25 % of 16 = 1 rem = 9px
+    }
+
+    @media only screen and (max-width: $bp-900) { // width < 900? tab-port
+        font-size: 50%; // 50 % of 16 = 1 rem = 8px
+    }
+    
+    @media only screen and (max-width: $bp-600) { // width < 900? phone
+        font-size: 50%; // 50 % of 16 = 1 rem = 8px
+    }
+    
+    @media only screen and (min-width: 112.5em) { // width > 1800 px big-desktop
+        font-size: 75%; // 75 % of 16 = 1rem = 12px
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+////////////////////////
+/// THIS IS FOR blogspot
+body {
+    overflow-wrap: normal;
+    word-wrap: normal;
+    word-break: normal;
+}
+
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    outline: none;  
+    
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+    ////////////
+    /* 
+    
+    &,
+    &:link,
+    &:visited {
+
+    } 
+    
+    */
+
+    /*
+    &:active,
+    &:focus { 
+    }
+
+    */
+}
+
+//cant give here as it will add pseudo elements to each elemnt
+// but we need to give content:''; and display: block; to
+// these two pseudo elements
+// ALWAYS ALWAYS ALWAYS
+*::before,
+*::after {
+    // content: "";
+    // display: block;
+}
+
+///////////////////////
+/// images should have display block
+/// because block elements have new line
+/// by default and thus you prevent a
+/// small white line below the images
+/// after making them block or inline-block
+img {
+    display: inline-block;
+    width: 100%;
+} 
+/////////////////
+/// button remove the default css
+button {
+    font-size: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
